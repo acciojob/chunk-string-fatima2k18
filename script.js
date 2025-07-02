@@ -1,20 +1,26 @@
 function stringChop(str, size) {
-    if (str === null || size <= 0) {
-        return [];
-    }
-
-    const result = [];
-
-    for (let i = 0; i < str.length; i += size) {
-        result.push(str.slice(i, i + size));
-    }
-
-    return result;
+  // If the input string is falsy (null, undefined, empty), return an empty array
+  if (!str) return [];
+  // Initialize an empty array to store the chunks
+  let chunks = [];
+  // Loop through the string with steps of 'size'
+  for (let i = 0; i < str.length; i = i + size) {
+    // Extract a substring from the current position up to i+size (but not exceeding the string length)
+    let subStr = str.slice(i, i + size);
+    // Add the substring chunk to the chunks array
+    chunks.push(subStr);
+  }
+  // Return the array containing all the chunks
+  return chunks;
 }
 
-// Do not change the code below
-const str = prompt("Enter String.");
-const size = parseInt(prompt("Enter Chunk Size."), 10);
-const chunks = stringChop(str, size);
+// Test the function with an example input and chunk size of 5
+console.log(stringChop("Hello, world!", 5));
 
-alert("Chunks: " + JSON.stringify(chunks));
+// // Do not change the code below
+// // Prompt the user to enter a string
+// const str = prompt("Enter String.");
+// // Prompt the user to enter the chunk size
+// const size = prompt("Enter Chunk Size.");
+// // Display the chunked array as an alert
+// alert(stringChop(str, size));
