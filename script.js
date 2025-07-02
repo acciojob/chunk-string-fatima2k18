@@ -15,7 +15,7 @@ function stringChop(str, size) {
 }
 
 // Test the function with an example input and chunk size of 5
-console.log(stringChop("Hello, world!", 5));
+//console.log(stringChop("Hello, world!", 5));
 
 // // Do not change the code below
 // // Prompt the user to enter a string
